@@ -536,7 +536,7 @@ inline void Store(uint16_t addr, uint8_t value) {
                 if (fp_type == 1) {
                     fp_bank_idx = bank_idx;
                     fp_bak1 = bank[0x4000];
-                    fp_bak1 = bank[0x4001];
+                    fp_bak2 = bank[0x4001];
                 }
                 fp_step = 3;
                 return;
@@ -608,7 +608,7 @@ void Initialize(const char* path) {
 	for (size_t i=0; i<0x100; i++) {
 		rom_volume0[i] = rom_buff + (0x8000 * i);
 		rom_volume1[i] = rom_buff + (0x8000 * (0x100 + i));
-		rom_volume1[i] = rom_buff + (0x8000 * (0x200 + i));
+		rom_volume2[i] = rom_buff + (0x8000 * (0x200 + i));
 	}
 	for (size_t i=0; i<0x20; i++) {
 		nor_banks[i] = nor_buff + (0x8000 * i);
